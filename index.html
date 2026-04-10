@@ -1,0 +1,856 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Pahadi Ghar Darcha | Homestay</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+     
+   html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Side mein screen katne se rokega */
+}
+
+img {
+  max-width: 100%; /* Photos screen se bahar nahi jayengi */
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Ek standard limit */
+  margin: 0 auto;
+}
+
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background-color: #f8fafc; }
+
+        
+
+        .glass {
+
+            background: rgba(255, 255, 255, 0.7);
+
+            backdrop-filter: blur(12px);
+
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        }
+
+
+
+        .hero-zoom {
+
+            animation: zoomOut 20s infinite alternate;
+
+        }
+
+
+
+        @keyframes zoomOut {
+
+            from { transform: scale(1.2); }
+
+            to { transform: scale(1); }
+
+        }
+
+
+
+        .bottom-nav {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            z-index: 1000;
+
+            width: 90%;
+
+            max-width: 400px;
+
+            border-radius: 25px;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            padding: 12px;
+
+        }
+
+
+
+        .faq-content { display: none; }
+
+        .faq-item.active .faq-content { display: block; }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass">
+
+        <div class="flex items-center gap-2">
+
+            <div class="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center border border-sky-200">
+
+                <i class="fas fa-mountain text-sky-600"></i>
+
+            </div>
+
+            <span class="font-bold text-gray-800 text-lg tracking-tight">The Pahadi Ghar - Darcha</span>
+
+        </div>
+
+        
+
+        <button onclick="toggleMobileMenu()" class="text-gray-700 text-2xl">
+
+            <i class="fas fa-ellipsis-v"></i>
+
+        </button>
+
+    </nav>
+
+
+
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-[60] hidden flex-col items-center justify-center gap-8 text-2xl font-semibold">
+
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6"><i class="fas fa-times"></i></button>
+
+        <a href="#about" onclick="toggleMobileMenu()">About Us</a>
+
+        <a href="#facilities" onclick="toggleMobileMenu()">Facilities</a>
+
+        <a href="#reviews" onclick="toggleMobileMenu()">Reviews</a>
+
+        <a href="#reach" onclick="toggleMobileMenu()">How to Reach</a>
+
+        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+
+    </div>
+
+
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+
+        <div class="absolute inset-0 z-0">
+
+            <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover hero-zoom" alt="Snowy Mountains">
+
+            <div class="absolute inset-0 bg-black/30"></div>
+
+        </div>
+
+        
+
+        <div class="relative z-10 text-center text-white px-4" data-aos="fade-up">
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">The Pahadi Ghar Darcha</h1>
+
+            <p class="text-xl md:text-2xl mb-8 font-light italic">"The Pahadi Ghar Darcha: Your Home Above the Clouds."</p>
+
+            <a href="#booking" class="glass px-8 py-4 rounded-full text-gray-800 font-bold hover:bg-white transition-all">Book Your Stay</a>
+
+        </div>
+
+    </section>
+
+<a href="https://rajputthinly07-del.github.io/pahadi.ghar.book/" class="professional-book-btn" target="_blank">
+    Book Now
+</a>
+
+<style>
+    .professional-book-btn {
+        /* Positioning: Ab niche se 110px upar kar diya hai */
+        position: fixed;
+        bottom: 110px; 
+        right: 25px;
+        
+        /* Styling: Navy Blue Color */
+        background-color: #003366; /* Elegant Navy Blue */
+        color: white !important;
+        padding: 15px 35px; /* Thoda zyada padding premium feel ke liye */
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 17px; /* Font size thoda bada */
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px; /* Capsule shape */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        z-index: 99999; /* Bahut high taaki hamesha upar rahe */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-transform: uppercase; /* Text ko uppercase kiya professional look ke liye */
+        letter-spacing: 1px; /* Letters ke beech thodi jagah */
+    }
+
+    /* Hover effect for PC */
+    .professional-book-btn:hover {
+        background-color: #004080; /* Light Navy on Hover */
+        transform: translateY(-5px); /* Upar uthega */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        color: white;
+    }
+
+    /* Active effect for Mobile touch */
+    .professional-book-btn:active {
+        transform: scale(0.95) translateY(-2px);
+    }
+
+    /* Responsive adjustments for Mobile */
+    @media (max-width: 600px) {
+        .professional-book-btn {
+            bottom: 100px; /* Mobile par position adjust */
+            padding: 12px 28px;
+            font-size: 15px;
+            right: 20px;
+        }
+    }
+</style>
+
+
+
+    <div class="bottom-nav glass shadow-2xl border-t border-white/50">
+
+        <a href="#" class="flex flex-col items-center text-sky-600">
+
+            <i class="fas fa-home text-xl"></i>
+
+            <span class="text-[10px] font-bold">Home</span>
+
+        </a>
+
+        <a href="tel:+919418776308" class="flex flex-col items-center text-gray-600">
+
+            <i class="fas fa-phone-alt text-xl"></i>
+
+            <span class="text-[10px] font-bold">Call</span>
+
+        </a>
+
+        <a href="#booking" class="flex flex-col items-center text-gray-600">
+
+            <i class="fas fa-calendar-check text-xl"></i>
+
+            <span class="text-[10px] font-bold">Book</span>
+
+        </a>
+
+        <a href="https://wa.me/917876631873" class="flex flex-col items-center text-green-600">
+
+            <i class="fab fa-whatsapp text-xl"></i>
+
+            <span class="text-[10px] font-bold">Chat</span>
+
+        </a>
+
+    </div>
+
+
+
+    <section id="booking" class="py-20 px-6 bg-white">
+
+        <div class="max-w-xl mx-auto glass p-8 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-up">
+
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Reserve Your Room</h2>
+
+            <form id="bookingForm" class="space-y-4">
+
+                <input type="text" id="name" placeholder="Full Name" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-sky-400" required>
+
+                <input type="tel" id="phone" placeholder="Phone Number" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-sky-400" required>
+
+                <div class="grid grid-cols-2 gap-4">
+
+                    <input type="date" id="checkin" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-sky-400" required>
+
+                    <input type="number" id="days" placeholder="Total Days" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-sky-400" required>
+
+                </div>
+
+                <input type="number" id="guests" placeholder="Number of Guests" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-sky-400" required>
+
+                <textarea id="message" placeholder="Special Request (Optional)" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-sky-400" rows="3"></textarea>
+
+                <button type="button" onclick="sendToWhatsApp()" class="w-full bg-sky-600 text-white p-4 rounded-2xl font-bold hover:bg-sky-700 transition-colors shadow-lg">Confirm via WhatsApp</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div data-aos="fade-right">
+
+                <h2 class="text-4xl font-bold mb-6 text-gray-800">About Our Pahadi Ghar</h2>
+
+                <p class="text-gray-600 leading-relaxed mb-6">
+
+                    Nestled in the serene landscapes of Darcha Dangma, The Pahadi Ghar-Darcha is more than just a homestay; it's an emotion. Experience authentic Lahauli hospitality where the air is pure and the stars are brighter. Our home offers panoramic views of the Bhaga River and the surrounding peaks.
+
+                </p>
+
+                <p class="font-semibold text-sky-700 italic">— Hosted by Chhering Tashi and Thinleisss</p>
+
+            </div>
+
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+
+                <div class="h-64 bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400"><a href="https://ibb.co/4wbVxy0v"><img href="https://ibb.co/7J8hd6RB"><img src="https://i.ibb.co/6RVQ7f1G/Gemini-Generated-Image-3rmbd93rmbd93rmb-4.jpg" alt="Gemini-Generated-Image-3rmbd93rmbd93rmb-4" border="0"></a></div>
+
+                <div class="h-64 bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400"><img href="https://ibb.co/TDpd1Fbz"><img src="https://i.ibb.co/twkFzWxy/IMG-20250609-154210736-2.jpg" alt="IMG-20250609-154210736-2" border="0"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-20 px-6 bg-sky-50">
+
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">Comfortable Stay &amp; Home Cooked Food</h2>
+
+            <p class="text-lg text-gray-600 mb-8">
+
+                Enjoy cozy rooms built with traditional stones and wood to keep you warm. Our kitchen serves farm-to-table organic Himachali meals, including Thukpa, Siddu, and fresh local vegetables.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+<section class="tp-hotel-wrapper">
+    <style>
+        .tp-hotel-wrapper {
+            padding: 60px 20px;
+            background-color: #fcfcfc;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .tp-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .tp-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+        }
+        .tp-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        
+        .tp-img-box { width: 100%; height: 230px; background: #e0e0e0; position: relative; }
+        .tp-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .tp-tag {
+            position: absolute; top: 15px; left: 15px;
+            background: #2c3e50; color: #fff;
+            padding: 5px 12px; font-size: 12px; border-radius: 4px; font-weight: bold;
+        }
+
+        .tp-content { padding: 25px; text-align: left; }
+        .tp-title { font-size: 22px; color: #333; margin: 0 0 10px 0; }
+        .tp-price { font-size: 26px; color: #d35400; font-weight: bold; margin-bottom: 15px; }
+        .tp-price span { font-size: 14px; color: #777; font-weight: normal; }
+        
+        .tp-features { list-style: none; padding: 0; margin: 0 0 20px 0; }
+        .tp-features li { margin-bottom: 8px; color: #555; display: flex; align-items: center; font-size: 15px; }
+        .tp-features li::before { content: "•"; color: #d35400; font-weight: bold; margin-right: 10px; }
+
+        .tp-meal-note { 
+            background: #fff5eb; border-left: 3px solid #d35400; 
+            padding: 10px; font-size: 13px; color: #666; margin-bottom: 20px;
+        }
+        .tp-btn {
+            display: block; text-align: center; background: #d35400; color: #fff;
+            text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold;
+        }
+    </style>
+
+    <h2 style="font-size: 32px; margin-bottom: 10px;">The Pahadi Ghar - Darcha</h2>
+    <p style="color: #666; margin-bottom: 40px;">Room prices change according to the Seasons</p>
+
+    <div class="tp-container">
+        <div class="tp-card">
+            <div class="tp-tag">BEST FOR 2-3 PERSONS</div>
+            <div class="<img href=" https:="" ibb.co="" 8g7fw9Vf"=""><img src="https://i.ibb.co/yFQZCqJZ/4bb98d15-c346-4581-952a-a120db19f4fc-2.jpg" alt="4bb98d15-c346-4581-952a-a120db19f4fc-2" border="0">
+            </div>
+            <div class="tp-content">
+                <h3 class="tp-title">Standard Room</h3>
+                <div class="tp-price">₹2,499 <span>/ Per Night</span></div>
+                <ul class="tp-features">
+                    <li>1 King Size Double Bed</li>
+                    <li>Extra Single Bed (On Request)</li>
+                    <li>Perfect for Small Families</li>
+                </ul>
+                <div class="tp-meal-note">
+                    <b>Meals:</b> Charges extra as per your choice. Authentic local food available on demand.
+                </div>
+                <a href="#" class="tp-btn">Book Room</a>
+            </div>
+        </div>
+
+        <div class="tp-card">
+            <div class="tp-tag">BEST FOR 5-6 PERSONS</div>
+            <div class="<img href=" https:="" ibb.co="" LzFR6Z3x"=""><img src="https://i.ibb.co/C5c8vHfb/IMG-20250427-120729999-2.jpg" alt="IMG-20250427-120729999-2" border="0">
+            </div>
+            <div class="tp-content">
+                <h3 class="tp-title">Best Family Room</h3>
+                <div class="tp-price">₹4,499 <span>/ Per Night</span></div>
+                <ul class="tp-features">
+                    <li>2 Double Beds (King Size)</li>
+                    <li>1 Extra Single Bed</li>
+                    <li>Heater Facility (On Request)</li>
+                </ul>
+                <div class="tp-meal-note">
+                    <b>Meals:</b> Charges extra as per your choice. Authentic local food available on demand.
+                </div>
+                <a href="#" class="tp-btn">Book Room</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="facilities" class="py-20 px-6 max-w-6xl mx-auto">
+
+        <h2 class="text-3xl font-bold text-center mb-12">Our Facilities</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up">
+
+                <i class="fas fa-bed text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Cozy Stay</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up" data-aos-delay="100">
+
+                <i class="fas fa-bath text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Attached Washrooms</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up" data-aos-delay="200">
+
+                <i class="fas fa-parking text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Safe Parking</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up" data-aos-delay="300">
+
+                <i class="fas fa-utensils text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Kitchen Access</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up" data-aos-delay="400">
+
+                <i class="fas fa-fire text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Room Heater</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up">
+
+                <i class="fas fa-wifi text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Free Wi-Fi</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up">
+
+                <i class="fas fa-mug-hot text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Hot Water</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up">
+
+                <i class="fas fa-mountain-sun text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">View Balcony</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up">
+
+                <i class="fas fa-hiking text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Guided Treks</p>
+
+            </div>
+
+            <div class="p-6 glass rounded-3xl text-center" data-aos="fade-up">
+
+                <i class="fas fa-campground text-sky-500 text-3xl mb-3"></i>
+
+                <p class="font-semibold">Bonfire Night</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="reviews" class="py-20 px-6 bg-white">
+
+        <div class="max-w-6xl mx-auto">
+
+            <div class="text-center mb-12">
+
+                <h2 class="text-4xl font-bold mb-4">Guest Reviews</h2>
+
+                <span class="inline-block bg-yellow-100 text-yellow-700 px-6 py-2 rounded-full font-bold text-lg border border-yellow-200">
+
+                    4.9/5 | 500+ Happy Guests
+
+                </span>
+
+            </div>
+
+            
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <script>
+
+                    const reviews = [
+
+                        {name: "Amit", loc: "Manali", text: "Heavenly experience, the host is amazing!"},
+
+                        {name: "Sneha", loc: "Delhi", text: "Best food and cleanest rooms in Darcha."},
+
+                        {name: "Vikram", loc: "Chandigarh", text: "Stunning mountain views from the balcony."},
+
+                        {name: "Rahul", loc: "Mumbai", text: "A perfect stop before Shinkula Pass."},
+
+                        {name: "Priya", loc: "Bangalore", text: "The warm hospitality touched our hearts."},
+
+                        {name: "Anjali", loc: "Pune", text: "Cozy rooms and best ginger lemon tea!"},
+
+                        {name: "Karan", loc: "Shimla", text: "True Pahadi vibes. Highly recommended."},
+
+                        {name: "Meera", loc: "Ahmedabad", text: "Cleanest bathrooms I've seen in homestays."},
+
+                        {name: "Suresh", loc: "Lucknow", text: "Chhering ji is a great host and guide."},
+
+                        {name: "Kabir", loc: "Kolkata", text: "The peace here is unmatched. Will come back."}
+
+                    ];
+
+                    reviews.forEach(r => {
+
+                        document.write(`
+
+                            <div class="p-6 glass rounded-3xl shadow-sm border border-gray-50" data-aos="fade-up">
+
+                                <div class="flex text-yellow-400 mb-2 italic">★★★★★</div>
+
+                                <p class="text-gray-600 mb-4 italic">"${r.text}"</p>
+
+                                <p class="font-bold text-gray-800">${r.name}</p>
+
+                                <p class="text-xs text-gray-400">${r.loc}</p>
+
+                            </div>
+
+                        `);
+
+                    });
+
+                </script>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-20 px-6 max-w-6xl mx-auto">
+
+        <h2 class="text-3xl font-bold mb-10">Nearest Attractions</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <ul class="space-y-4 text-lg text-gray-700">
+
+                <li>• Baralacha La Pass</li>
+
+                <li>• Shinkula Pass</li>
+
+                <li>• Deepak Tal Lake</li>
+
+                <li>• Suraj Tal Lake</li>
+
+                <li>• Kardang Monastery</li>
+
+                <li>• Shashur Monastery</li>
+
+                <li>• Jispa Valley</li>
+
+                <li>• Bhaga River Bank</li>
+
+                <li>• Zanskar Valley Gateway</li>
+
+                <li>• Darcha High Bridge</li>
+
+                <li>• Trilokinath Temple</li>
+
+              </ul>
+
+          
+            <div class="grid grid-cols-1 gap-4">
+
+                <div class="h-64 bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400 italic"><img href="https://ibb.co/vCthm5Xz"><img href="https://ibb.co/KCJ6z2r"><img src="https://i.ibb.co/VXsVpgq/photo-1566515788590-23e44a99dfc1-2.jpg" alt="photo-1566515788590-23e44a99dfc1-2" border="0"></div>
+
+                <div class="h-64 bg-gray-200 rounded-3xl items-center justify-center text-gray-400 italic"><img href="https://ibb.co/whqxzh31"><img href="https://ibb.co/hxvjkGZw"><img src="https://i.ibb.co/j9F2dCWs/pexels-vikashkr50-20292895-2.jpg" alt="pexels-vikashkr50-20292895-2" border="0"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="reach" class="py-20 px-6 bg-sky-50">
+
+        <div class="max-w-4xl mx-auto" data-aos="fade-right">
+
+            <h2 class="text-3xl font-bold mb-6">How to Reach Darcha</h2>
+
+            <div class="space-y-6 text-gray-700">
+
+                <p><strong>By Road:</strong> Darcha is located on the Manali-Leh Highway. You can take a bus or taxi from Manali (approx. 100km via Atal Tunnel).</p>
+
+                <p><strong>By Air:</strong> The nearest airport is Bhuntar (Kullu), about 150km away.</p>
+
+                <p><strong>By Rail:</strong> The closest major station is Chandigarh, from where you can drive up to Lahaul Valley.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-20 px-6 max-w-3xl mx-auto">
+
+        <h2 class="text-3xl font-bold mb-8 text-center">Questions &amp; Answers</h2>
+
+        <div class="space-y-4">
+
+            <script>
+
+                const faqs = [
+
+                    ["Is there mobile network?", "Jio and Airtel work well in Darcha."],
+
+                    ["Do you provide meals?", "Yes, we serve fresh organic breakfast and dinner."],
+
+                    ["Is room heating available?", "Yes, we provide heaters on request."],
+
+                    ["How far is Atal Tunnel?", "It is roughly 70-80 km away from us."],
+
+                    ["Is parking available?", "Yes, we have safe and free parking space."],
+
+                    ["What is the best time to visit?", "May to October is ideal for road trips."],
+
+                    ["Are pets allowed?", "Yes, we are pet-friendly!"],
+
+                    ["Do you help with permits?", "Yes, we can guide you for Shinkula/Leh permits."],
+
+                    ["Is hot water available?", "Yes, we have geysers and hot water bags."],
+
+                    ["Can we access the kitchen?", "Yes, for light snacks or baby food."]
+
+                ];
+
+                faqs.forEach((f, i) => {
+
+                    document.write(`
+
+                        <div class="faq-item border-b border-gray-200 pb-4 cursor-pointer" onclick="this.classList.toggle('active')">
+
+                            <div class="flex justify-between items-center font-bold text-gray-800 py-2">
+
+                                <span>${f[0]}</span>
+
+                                <i class="fas fa-chevron-down text-sm"></i>
+
+                            </div>
+
+                            <div class="faq-content text-gray-600 mt-2">${f[1]}</div>
+
+                        </div>
+
+                    `);
+
+                });
+
+            </script>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-20 px-6 text-center">
+
+        <h2 class="text-3xl font-bold mb-6">Our Location</h2>
+
+        <p class="mb-8 text-gray-600 text-lg">Darcha Dangma, Lahaul &amp; Spiti, Himachal Pradesh</p>
+
+        <div class="w-full h-96 rounded-3xl overflow-hidden shadow-xl mb-6">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13488.423456!2d77.1643!3d32.6712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3906990000000000%3A0x0!2zRGFyY2hh!5e0!3m2!1sen!2sin!4v1234567890" class="w-full h-full border-none"></iframe>
+
+        </div>
+
+        <a href="https://maps.app.goo.gl/wD4LpifNPN3zkyzZ8" target="_blank" class="bg-gray-800 text-white px-8 py-4 rounded-full inline-block font-bold">Open in Google Maps</a>
+
+    </section>
+
+
+
+    <section id="contact" class="py-20 px-6 glass text-center border-t border-gray-100">
+
+        <h2 class="text-3xl font-bold mb-10">Get In Touch</h2>
+
+        <div class="space-y-4 text-xl">
+
+            <p><i class="fas fa-phone-alt mr-2 text-sky-600"></i> +91 9418776308 / 7876631873</p>
+
+            <p><i class="fab fa-whatsapp mr-2 text-green-500"></i> +91 7876631873</p>
+
+            <p><i class="fas fa-envelope mr-2 text-red-400"></i> rajputthinly07@gmail.com / chheringtashi01@gmail.com</p>
+
+            <p><i class="fab fa-instagram mr-2 text-pink-500"></i> @pahadi.ghar</p>
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="py-10 text-center text-gray-400 text-sm border-t border-gray-100">
+
+        <p>© 2025 The Pahadi Ghar - Darcha. All Rights Reserved.</p>
+
+    </footer>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({ duration: 1000, once: true });
+
+
+
+        function toggleMobileMenu() {
+
+            const menu = document.getElementById('mobileMenu');
+
+            menu.classList.toggle('hidden');
+
+            menu.classList.toggle('flex');
+
+        }
+
+
+
+        function sendToWhatsApp() {
+
+            const name = document.getElementById('name').value;
+
+            const phone = document.getElementById('phone').value;
+
+            const checkin = document.getElementById('checkin').value;
+
+            const days = document.getElementById('days').value;
+
+            const guests = document.getElementById('guests').value;
+
+            const msg = document.getElementById('message').value;
+
+
+
+            const text = `*New Booking Request*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Check-in:* ${checkin}%0A*Days:* ${days}%0A*Guests:* ${guests}%0A*Message:* ${msg}`;
+
+            window.open(`https://wa.me/917876631873?text=${text}`, '_blank');
+
+        }
+
+    </script>
+
+</body>
+
+</html>
